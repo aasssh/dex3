@@ -1,0 +1,55 @@
+import java.util.*;
+class Student{
+	int rno;
+	String name;
+	float per;
+	Scanner input = new Scanner(System.in);
+	void get()  {
+		System.out.println("Enter the roll number,name and percentage ");
+		rno = input.nextInt();
+		name = input.next();
+		per = input.nextFloat();
+	}
+	void display(){
+		System.out.println("\nRoll Number:\t"+rno+"\nName:\t"+name+"\nPercentage:\t"+per);
+	}
+}
+class q7{
+	public static void main(String args[]){
+		int i,j,n;
+		Scanner input = new Scanner(System.in);
+		System.out.println("\nEnter the total number of students:");
+		n = input.nextInt();
+		Student  st[] = new Student[n];
+		for(i=0;i<n;i++){
+			st[i] = new Student();
+			st[i].get();
+		}
+		for(i=0;i<n;i++){
+			st[i].display();
+		}
+		sortAvg(st,n);
+		System.out.println("**********SORT BY AVERAGE ***********");
+		for(i=0;i<n;i++)
+			st[i].display();
+	
+		System.out.println("-----------------------------");
+	}
+	static void sortAvg(Student st[],int n){
+		Student temp;
+		for(int i=0;i<n;i++){
+			for(int j=0;j<n;j++){
+				if(st[i].per<st[j].per){
+					temp = st[i];
+					st[i] = st[j];
+					st[j] = temp;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+

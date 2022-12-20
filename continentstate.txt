@@ -1,0 +1,36 @@
+import java.util.Scanner;
+class Continent{
+	Scanner input  = new Scanner(System.in);
+	String contInput;
+	void getContinent(){
+		System.out.println("Enter the name of the continent:");
+		contInput = input.next();
+	}
+}
+class Country extends Continent{
+	String countInput;
+	void getCountry(){
+		System.out.println("Enter the name of the country:");
+		countInput = input.next();
+	}
+}
+class State extends Country{
+	String stateInput;
+	void getState(){
+		System.out.println("Enter the name of the state:");
+		stateInput = input.next();
+	}
+}
+class q10{
+	public static void main(String args[]){
+		State s = new State();
+		s.getContinent();
+		s.getCountry();
+		s.getState();
+		System.out.println("Continent:\t"+s.contInput+"\nCountry:\t"+s.countInput+"\nState:\t\t"+s.stateInput);
+	}
+}
+
+
+
+

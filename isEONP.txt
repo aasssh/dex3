@@ -1,0 +1,45 @@
+class myNumber{
+	private int n;
+	public myNumber(){
+		n = 0;
+	}
+	public myNumber(int n){
+		this.n = n;
+	}
+	public void isPositive(int n){
+		if(n > 0)
+			System.out.println("The given integer is a positive number "+n);
+	}
+	public void isNegative(int n){
+		if(n < 0)
+			System.out.println("The given integer is negative number "+n);
+	}
+	public void isEven(int n){
+		if(n%2==0)
+			System.out.println("The given integer is a even number "+n);
+	}
+	public void isOdd(int n){
+		if(n%2!=0)
+			System.out.println("The given integer is odd number "+n);
+	}
+	public void isZero(int n){
+		if(n == 0)
+			System.out.println("The given integer is a zero number "+n);
+	}
+}
+class q2{
+	public static void main(String args[]){
+		int num = Integer.parseInt(args[0]);
+		myNumber status = new myNumber();
+		status.isPositive(num);
+		status.isNegative(num);
+		status.isEven(num);
+		status.isOdd(num);
+		status.isZero(num);
+	}
+}
+
+
+
+
+

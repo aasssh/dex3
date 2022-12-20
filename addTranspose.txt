@@ -1,0 +1,102 @@
+import java.util.Scanner;
+class q11{
+	public static void main(String args[]){
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter the vertices of the matrices:");
+		int v = input.nextInt();
+		int i,j;
+		int mat1[][] = new int[v][v];
+		int mat2[][] = new int[v][v];
+		System.out.println("\n\nEnter the elements for matrice 1:");
+		for(i=0;i<v;i++){
+			for(j=0;j<v;j++){
+				System.out.println("Enter the elememt for the vertice+["+i+"]["+j+"]:");
+				mat1[i][j] = input.nextInt();
+			}
+		}
+		System.out.println("\n\nEnter the elements for the matrice 2:");
+		for(i=0;i<v;i++){
+			for(j=0;j<v;j++){
+				System.out.println("Enter the element for the vertice+["+i+"]["+j+"]:");
+				mat2[i][j] = input.nextInt();
+			}
+		}
+
+		while(true){
+			System.out.println("\n\n\n\t\t\t\t\t********MENU***********\n\n");
+			System.out.println("Enter the choice to execute the operations:");
+			System.out.println("\n1)Addition of the matrix\n2)Transpose of the matrix\n3)Exit");
+			int choice = input.nextInt();
+			switch(choice){
+				case 1:
+					int sum[][] = new int [v][v];
+					System.out.println("The addition of the 2 matrices are :\n\n");
+					for(i=0;i<v;i++)
+						for(j=0;j<v;j++)
+							sum[i][j] = mat1[i][j] + mat2[i][j];
+					for(i=0;i<v;i++){
+						System.out.println();
+						for(j=0;j<v;j++){
+							System.out.print(sum[i][j]+"\t");
+						}
+					}
+					break;
+				case 2:
+					System.out.println("Enter the choice of matrix to get it's tranpose:\n1)Matrix 1\n2)Matrix 2");
+					int c = input.nextInt();
+					if(c == 1){
+						System.out.println("\n\nMatrix 1 without tranpose:\n");
+						for(i=0;i<v;i++){
+							System.out.println();
+							for(j=0;j<v;j++){
+								System.out.print(mat1[i][j]+"\t");
+							}
+						}
+						System.out.println("\n\nMatrx 2 after transpose:\n");
+						for(i=0;i<v;i++){
+							System.out.println();
+							for(j=0;j<v;j++){
+								System.out.print(mat1[j][i]+"\t");
+							}
+						}
+					}
+					else if(c == 2 ){
+						System.out.println("\n\nMatrix 2 without transpose:\n\n");
+						for(i=0;i<v;i++){
+							System.out.println();
+							for(j=0;j<v;j++){
+								System.out.print(mat2[i][j]+"\t");
+							}
+						}
+						System.out.println("\n\nMartix 2 after transpose:\n");
+						for(i=0;i<v;i++){
+							System.out.println();
+							for(j=0;j<v;j++){
+								System.out.print(mat2[j][i]+"\t");
+							}
+						}
+					}
+					else{
+						System.out.println("\nInavid choice matrix there are only 2 matrix 2 select\n");
+					}
+					break;
+				case 3:
+					System.exit(0);
+				default:
+					System.out.println("Invalid input choice:\n");
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+

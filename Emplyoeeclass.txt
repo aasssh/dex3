@@ -1,0 +1,64 @@
+import java.util.Scanner;
+class Employee{
+	double sal;
+	int id;
+	String dept,name;
+	static int count = 1;
+	Employee(){
+		id = 0;
+		name = null;
+		dept = null;
+		sal = 0;
+	}
+	Employee(int id,String name,String dept,double sal){
+		this.id = id;
+		this.name = name;
+		this.dept = dept;
+		this.sal = sal;
+	}
+	void display(){
+		System.out.println("ID: "+id+"\nName: "+name+"\nDepartment: "+dept+"\nSalary: "+sal);
+	}
+	static void counter(){
+		System.out.println("The Object is been created\n");
+		count++;
+	}
+}
+
+class q9{
+	public static void main(String args[]){
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter the total number of employess to enter:");
+		int n = input.nextInt();
+		Employee emp[] =  new Employee[n];
+		for(int i=0;i<n;i++){
+			System.out.println("Enter the ID of the Employee:");
+			int id = input.nextInt();
+			System.out.println("Enter the Name of the Employee:");
+			String name = input.next();
+			System.out.println("Enter the Department of the Employee:");
+			String dept = input.next();
+			System.out.println("Enter the Salary of the Employee:");
+			double sal = input.nextDouble();
+
+			emp[i] = new Employee(id,name,dept,sal);
+			emp[i].counter();
+		}
+		System.out.println("==============================================================");
+		for(int i=0;i<n;i++){
+			emp[i].display();
+		}
+		System.out.println("==============================================================");
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
